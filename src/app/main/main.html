@@ -1,0 +1,67 @@
+<app-slider></app-slider>
+<div class="main">
+  <div class="sidebar">
+    <details open>
+      <summary>Categories</summary>
+      <div class="category-list">
+        <label><input type="checkbox" (change)="onCheck('iPhone', $event)"> iPhone</label><br>
+        <label><input type="checkbox" (change)="onCheck('Samsung', $event)"> Samsung</label><br>
+        <label><input type="checkbox" (change)="onCheck('Huawei', $event)"> Huawei</label>
+      </div>
+    </details>
+  </div>
+
+  <div class="content-area">
+    
+    <div class="admin-panel" *ngIf="phoneService.currentUser?.role === 'admin'">
+      <button class="add-main-btn" (click)="toggleForm()">+ Add New Product</button>
+    </div>
+
+  
+    <div class="modal-form" *ngIf="isFormVisible">
+      <div class="form-content">
+        <h3>Add New Device</h3>
+        
+        <input [(ngModel)]="newProduct.brand" placeholder="Brand (Samsung, iPhone...)" title="Brand">
+        <input [(ngModel)]="newProduct.model" placeholder="Model (Galaxy S24...)" title="Model">
+        <input type="number" [(ngModel)]="newProduct.price" placeholder="Price ($)" title="Price">
+        
+        <label>Select Photo:</label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*"  title="Select a photo for the product"   placeholder="Upload image" >
+        
+        <textarea [(ngModel)]="newProduct.description" placeholder="Description"></textarea>
+        
+        <div class="form-actions">
+          <button (click)="saveProduct()" class="save-btn">Add to List</button>
+          <button (click)="toggleForm()" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  <div class="carts">
+      <div class="card" *ngFor="let phone of filtered" [routerLink]="['/product', phone.id]">
+        <div class="img-box">
+        <img [src]="phone.image.startsWith('data:') ? phone.image : 'img/' + phone.image" alt="phone">
+
+        </div>
+        <small>{{phone.brand}}</small>
+        <h3>{{phone.model}}</h3>
+        <p class="price">Price: ${{phone.price}}</p>
+        
+        <button *ngIf="phoneService.currentUser?.role !== 'admin'" 
+                class="buy-btn" 
+                (click)="$event.stopPropagation(); addToCart(phone)">
+                BUY
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+
+
+    
+
+

@@ -1,0 +1,114 @@
+{
+    "phones": [
+    {
+      "id": 1,
+      "brand": "Samsung",
+      "model": "Galaxy S23",
+      "price": 899,
+      "image": "23.jpg"
+      
+    },
+    {
+      "id": 2,
+      "brand": "Samsung",
+      "model": "Galaxy S22",
+      "price": 799,
+      "image": "S22.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "Samsung",
+      "model": "Galaxy Note 20",
+      "price": 699,
+      "image": "Note20.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Samsung",
+      "model": "Galaxy A54",
+      "price": 499,
+      "image": "GalaxyA54.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "Samsung",
+      "model": "Galaxy Z Fold 5",
+      "price": 1799,
+      "image": "GalaxyZFold5.jpg"
+    },
+
+    {
+      "id": 6,
+      "brand": "iPhone",
+      "model": "iPhone 15 Pro",
+      "price": 1199,
+      "image": "iPhone15Pro.jpg"
+    },
+    {
+      "id": 7,
+      "brand": "iPhone",
+      "model": "iPhone 15",
+      "price": 999,
+      "image": "iPhone15ss.jpg"
+    },
+    {
+      "id": 8,
+      "brand": "iPhone",
+      "model": "iPhone 14 Pro",
+      "price": 1099,
+      "image": "iphone14pro1.jpg"
+    },
+    {
+      "id": 9,
+      "brand": "iPhone",
+      "model": "iPhone 14",
+      "price": 899,
+      "image": "iPhone14.jpg"
+    },
+    {
+      "id": 10,
+      "brand": "iPhone",
+      "model": "iPhone SE 3",
+      "price": 499,
+      "image": "iPhoneSE3.jpg"
+    },
+
+    {
+      "id": 11,
+      "brand": "Huawei",
+      "model": "P60 Pro",
+      "price": 899,
+      "image": "P60Pro.jpg"
+    },
+    {
+      "id": 12,
+      "brand": "Huawei",
+      "model": "P60",
+      "price": 699,
+      "image": "P601.jpg"
+    },
+    {
+      "id": 13,
+      "brand": "Huawei",
+      "model": "Mate 50 Pro",
+      "price": 1099,
+      "image": "Mate50Pro.jpg"
+    },
+    {
+      "id": 14,
+      "brand": "Huawei",
+      "model": "Mate 50",
+      "price": 799,
+      "image": "23.jpg"
+    },
+    {
+      "id": 15,
+      "brand": "Huawei",
+      "model": "Nova 11",
+      "price": 499,
+      "image": "Nova11.png"
+    }
+  ]
+
+}
+

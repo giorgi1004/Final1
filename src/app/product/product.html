@@ -1,0 +1,47 @@
+<div class="product-container" *ngIf="phone">
+    <div class="product-main">
+    <div class="image-section">
+    <img [src]="phone.image.startsWith('data:') ? phone.image : 'img/' + phone.image" 
+    [alt]="phone.model" [title]="phone.model">
+</div>
+
+        <div class="info-section">
+            <small>{{phone.brand}}</small>
+            <h1>{{phone.model}}</h1>
+            <p class="price-text">Price: ${{phone.price}}</p>
+
+            
+            <div class="buy-controls" *ngIf="phoneService.currentUser?.role !== 'admin'">
+                <label for="quantity-input">Quantity:</label>
+                <input 
+                    id="quantity-input" 
+                    type="number" 
+                    [(ngModel)]="quantity" 
+                    min="0" 
+                    title="Select quantity" 
+                    placeholder="0">
+                
+                <button (click)="addToCart()" class="buy-btn" title="Click to buy">BUY</button>
+            </div>
+
+           <div class="admin-controls" *ngIf="phoneService.currentUser?.role === 'admin'">
+                <p><strong>Admin Panel:</strong></p>
+                <button class="edit-btn" title="Edit this product">Edit product</button>
+                <button class="delete-btn" style="background: red; color: white;" title="Delete this product">Delete product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="description-section">
+        <h3>Description</h3>
+        <p class="description-text">
+            This is a detailed review of the {{phone.model}}. It features a high-quality display.
+        </p>
+    </div>
+</div>
+
+
+
+
+
+

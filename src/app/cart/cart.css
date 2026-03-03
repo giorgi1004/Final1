@@ -1,0 +1,143 @@
+.cart-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.cart-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.phone-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.phone-card:hover {
+    transform: translateY(-2px);
+}
+
+.img-wrapper {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.item-details h3 { margin: 0; font-size: 18px; }
+.brand { color: #888; font-size: 14px; margin: 5px 0; }
+.price { font-weight: bold; color: #2c3e50; font-size: 18px; }
+
+.remove-btn {
+    background: none;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+
+.cart-summary {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.summary-row.total {
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #27ae60;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover { background: #219150; }
+
+.login-warning {
+    color: #e74c3c;
+    background: #fdeaea;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+}
+
+.back-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

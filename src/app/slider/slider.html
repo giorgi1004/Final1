@@ -1,0 +1,20 @@
+<div class="slider-box">
+  <div class="line" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+    <div *ngFor="let s of slides" class="slide">
+      <img [src]="'imgs/' + s.url" alt="phone slide" />
+    </div>
+  </div>
+  
+  <div class="indicators">
+    <span *ngFor="let s of slides; let i = index" 
+          [class.active]="i === currentIndex"
+          (click)="setCurrentSlide(i)">
+    </span>
+  </div>
+</div>
+
+
+
+
+
+

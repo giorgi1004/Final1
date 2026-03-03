@@ -1,0 +1,60 @@
+<nav class="nav">
+    <h1 (click)="resetSearch()" style="cursor: pointer;">Shop</h1>
+    
+    <div class="search">
+        <input 
+            type="text" 
+            #inp 
+            (input)="onInput(inp.value)" 
+            (keyup.enter)="onSearch(inp.value)"
+            placeholder="Search products..."
+            [value]="currentSearch">
+        <button (click)="onSearch(inp.value)">Search</button>
+    </div>
+
+    <div class="navbuttons">
+        <div class="user-wrapper">
+            <button *ngIf="!phoneService.currentUser" routerLink="/login" class="login-btn">Login</button>
+            <div class="user-info-box" *ngIf="phoneService.currentUser">
+                <span class="user-name" (click)="toggleUserMenu()" style="cursor: pointer;">
+                    {{ displayUserName }}
+                </span>
+                <div class="user-dropdown" *ngIf="isUserMenuOpen">
+                    <button class="logout-btn" (click)="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-wrapper" (mouseenter)="isCartOpen = true" (mouseleave)="isCartOpen = false">
+            <button (click)="goToCartPage()" class="cart-main-btn"> 
+                <span>Cart ({{ totalCount }})</span>
+            </button>
+
+           <div class="cart-preview" *ngIf="isCartOpen && cartList.length > 0">
+                <div class="preview-scroll">
+                    <div class="preview-item" *ngFor="let item of cartList; let i = index">
+                        <div class="item-info">
+                            <span class="item-model">{{item.model}}</span>
+                            <span class="item-price">{{item.quantity}} x ${{item.price}}</span>
+                        </div>
+                        <button class="del-btn" (click)="removeFromCart(i)" title="Remove">×</button>
+                    </div>
+                </div>
+                
+                <div class="total-line">
+                    <span>Total:</span>
+                    <span>${{totalPrice}}</span>
+                </div>
+                
+                <button class="view-all-btn" (click)="goToCartPage()">Go to Cart</button>
+            </div>
+        </div> 
+    </div>
+</nav>
+
+
+
+
+
+
+
